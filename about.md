@@ -1,7 +1,10 @@
 ---
 layout: page
-title: Обо мне
+title: about
 ---
 
-Я тут просто пишу всякую фигню. Но спасибо, что зашли.
+My name is Maksim Melnikov. And my contacts are:
 
+* [github](https://github.com/approximatenumber)
+* [stackoverflow](http://ru.stackoverflow.com/users/199091/approximatenumber)
+* approximatenumber@gmail.com
