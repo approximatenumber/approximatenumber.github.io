@@ -7,10 +7,11 @@
 # Setup
 title:               ≈ Approximate Number
 tagline:             Some information for some people.
-url:                 lalala
+url:                 approximatenumber.github.io
 paginate:            5
 baseurl:             ""
 gems: [jekyll-paginate]
+excerpt_separator:   "<!-- more -->"
 
 # Assets
 #
