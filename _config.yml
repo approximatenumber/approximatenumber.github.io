@@ -1,23 +1,23 @@
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
+# permalink:           pretty
 # relative_permalinks: true
 
 # Setup
-title:               Approximate Number
+title:               ≈ Approximate Number
 tagline:             Some information for some people.
-url:                 http://getpoole.com
-paginate:            1
+url:                 lalala
+paginate:            5
 baseurl:             ""
 gems: [jekyll-paginate]
 
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.
-sass:
-  sass_dir:          _sass
-  style:            :compressed
+#sass:
+#  sass_dir:          _sass
+#  style:            :compressed
 
 # About/contact
 author:
