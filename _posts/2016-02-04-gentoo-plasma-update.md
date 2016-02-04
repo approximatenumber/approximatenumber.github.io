@@ -3,11 +3,12 @@ layout: post
 title: Обновление KDE до Plasma в Gentoo
 tags: linux; gentoo; plasma; kde
 comments: True
+excerpt_separator: <!--more-->
 ---
 
 При попытке обновления KDE в Gentoo до Plasma могут возникнуть некоторые... проблемы. Опишу некоторые моменты в ходе установки на своей системе.
 
-{% post.excerpt %}
+<!--more-->
 
 Следуя [gentoo-wiki](https://wiki.gentoo.org/wiki/KDE/Plasma_5_upgrade) и полезному [сообщению с forums.gentoo.org](https://forums.gentoo.org/viewtopic-p-7842836.html#7842836), я наткнулся на проблему с `qtcore`:
 {%highlight sh%}
