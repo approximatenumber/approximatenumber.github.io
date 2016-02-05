@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 <!--more-->
 
 Следуя [gentoo-wiki](https://wiki.gentoo.org/wiki/KDE/Plasma_5_upgrade) и полезному [сообщению с forums.gentoo.org](https://forums.gentoo.org/viewtopic-p-7842836.html#7842836), я наткнулся на проблему с `qtcore`:
-{%highlight sh%}
+{%highlight bash%}
 !!! Multiple package instances within a single package slot have been pulled
 !!! into the dependency graph, resulting in a slot conflict:
     dev-qt/qtcore:5  
@@ -27,7 +27,7 @@ excerpt_separator: <!--more-->
 Пакет `qtcore` двух различных версий пытается встать в один слот, что некошерно. Попытки собрать `qtcore` определенной версии, удаление установленных пакетов, но которые тянут за собой разные версии `qtcore`, не увенчались успехом. В итоге, как это часто бывает, помог совет emerge, ведь необходимо всегда читать вывод `emerge`, а лучше еще и понимать, о чем там речь. А он советовал попробовать собрать пакеты с опцией `--backtrack=30`, что помогло при обновлении `world`, и системой собрался `qtcore-5.5.1`.
 
 Далее сборка мира прервалась на `kdelibs4support`:
-{%highlight sh%}
+{%highlight bash%}
 Makefile:127: recipe for target 'all' failed 
 {%endhighlight%}
 
