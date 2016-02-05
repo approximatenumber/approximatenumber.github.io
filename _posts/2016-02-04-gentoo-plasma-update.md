@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Обновление KDE до Plasma в Gentoo
-tags: linux; gentoo; plasma; kde
+tags: linux gentoo plasma kde
 comments: True
 excerpt_separator: <!--more-->
 ---

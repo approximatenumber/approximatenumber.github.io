@@ -11,13 +11,16 @@ title: Home
         {{ post.title }}
       </a>
     </h1>
-
     <span class="post-date">{{ post.date | date_to_string }}</span>
+    {{ post.excerpt }}
+    <a href="{{ post.url }}"> >>>MOAR </a>
 
-  {% for post in site.posts %}
+
+
+<!--  {% for post in site.posts %}
       {{ post.excerpt }}
       <p>>>><a href="{{ post.url }}">read more</a></p>
-  {% endfor %}
+  {% endfor %} -->
 
 
   </div>
