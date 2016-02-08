@@ -7,9 +7,10 @@
 # Setup
 title:               ≈ Approximate Number
 tagline:             Some information for some people.
-# url:                 approximatenumber.github.io
+url:                 approximatenumber.github.io
 paginate:            5
 baseurl:             ""
+
 gems: [jekyll-paginate]
 excerpt_separator:   "<!-- more -->"
 
@@ -23,10 +24,6 @@ excerpt_separator:   "<!-- more -->"
 # About/contact
 author:
   name:              Maksim Melnikov
-  url:               https://blabla.bla
   email:             approximatenumber@gmail.com
 
 # Custom vars
-version:             2.0.0
-github:
-  repo:              https://github.com/poole/poole
