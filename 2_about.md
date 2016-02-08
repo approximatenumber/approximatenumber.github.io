@@ -1,6 +1,6 @@
 ---
 layout: page
-title: about
+title: _about
 ---
 
 My name is Maksim Melnikov. And my contacts are:
