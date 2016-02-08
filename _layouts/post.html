@@ -5,8 +5,9 @@ layout: default
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-date">{{ page.date | date_to_string }}</span>
+<p class="entry-tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags.html#{{ tag | cgi_escape }}" title="Pages tagged {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %} &bull; {% endunless %}{% endfor %}</p>
 
-<i class="icon-tags">
+<!-- <i class="icon-tags">
 </i> {% for tag in page.tags %} <a href="/tags/{{ tag }}" title="View posts tagged with &quot;{{ tag }}&quot;">
 <u>{{ tag }}</u>
 </a>  {% if forloop.last != true %} {% endif %} {% endfor %}
@@ -14,7 +15,7 @@ layout: default
 <br>
 
   {{ content }}
-</div>
+</div> -->
 
 <!--  <div class="related">
   <h2>Related Posts</h2>
