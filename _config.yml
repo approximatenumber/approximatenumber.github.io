@@ -7,7 +7,7 @@
 # Setup
 title:               ≈ Approximate Number
 tagline:             Some information for some people.
-# url:                 approximatenumber.github.io
+url:                 approximatenumber.github.io
 paginate:            5
 baseurl:             ""
 
