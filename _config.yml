@@ -8,6 +8,7 @@ permalink: /blog/:title
 # Setup
 title:               ≈ Approximate Number
 tagline:             Some information for some people.
+description:         tech blog about _dev, _linux and _stuff ☺
 # url:                 approximatenumber.github.io
 paginate:            5
 baseurl:             ""
