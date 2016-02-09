@@ -609,3 +609,17 @@ a.pagination-item:hover {
   font-size: 10px;
   font-size: 0.625rem;
 }
+
+/************************************************/
+/*
+/* Pictures
+/*
+/************************************************/
+
+
+.sticker {
+width:250px;
+float:right;
+margin:10px;
+}
+
