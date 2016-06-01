@@ -88,3 +88,5 @@ parted $drive set 1 boot on # сделаем раздел загрузочным
     APPEND initrd=/boot/qnx4_fat.img floppy
     {%endhighlight%}
 
+
+Архив с cram-fs доступен [здесь](/files/cram_fat.tar.gz).
