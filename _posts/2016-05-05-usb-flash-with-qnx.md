@@ -72,21 +72,21 @@ parted $drive set 1 boot on # сделаем раздел загрузочным
 
 *   Осталось положить нужные файлы на флешку:
 
-    {%highlight bash%}
-    mount /dev/sdX /mnt/flash
-    mkdir /mnt/flash/boot
-    cp -r syslinux /mnt/flash/boot
-    cp qnx_fat.img /mnt/flash/boot
-    {%endhighlight%}
+{%highlight bash%}
+mount /dev/sdX /mnt/flash
+mkdir /mnt/flash/boot
+cp -r syslinux /mnt/flash/boot
+cp qnx_fat.img /mnt/flash/boot
+{%endhighlight%}
     
 Содержимое файла `syslinux.cfg`:
 
-    {%highlight bash%}
-    LABEL QNX
-    MENU LABEL QNX
-    KERNEL /boot/memdisk
-    APPEND initrd=/boot/qnx4_fat.img floppy
-    {%endhighlight%}
+{%highlight bash%}
+LABEL QNX
+MENU LABEL QNX
+KERNEL /boot/memdisk
+APPEND initrd=/boot/qnx4_fat.img floppy
+{%endhighlight%}
 
 
 Архив с cram-fs доступен [здесь](/files/cram_fat.tar.gz).
