@@ -16,6 +16,19 @@ title: HOME
     <a href="{{ post.url }}" title="read more"> >>>MOAR </a>
 
 
+
+
+
+<!--  {% for post in site.posts %}
+      {{ post.excerpt }}
+      <p>>>><a href="{{ post.url }}">read more</a></p>
+  {% endfor %} -->
+
+
+  </div>
+  {% endfor %}
+</div>
+
 <!-- Pagination links -->
 <div class="pagination">
   {% if paginator.previous_page %}
@@ -30,15 +43,3 @@ title: HOME
     <span class="next ">Next</span>
   {% endif %}
 </div>
-
-
-<!--  {% for post in site.posts %}
-      {{ post.excerpt }}
-      <p>>>><a href="{{ post.url }}">read more</a></p>
-  {% endfor %} -->
-
-
-  </div>
-  {% endfor %}
-</div>
-
