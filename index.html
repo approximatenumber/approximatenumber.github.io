@@ -3,16 +3,18 @@ layout: default
 title: HOME
 ---
 
-<!-- This loops through the paginated posts -->
-{% for post in paginator.posts %}
-  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  <p class="author">
-    <span class="date">{{ post.date }}</span>
-  </p>
-  <div class="content">
-    {{ post.content }}
-  </div>
-{% endfor %}
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+    {{ post.excerpt }}
+    <a href="{{ post.url }}" title="read more"> >>>MOAR </a>
+
 
 <!-- Pagination links -->
 <div class="pagination">
@@ -28,3 +30,15 @@ title: HOME
     <span class="next ">Next</span>
   {% endif %}
 </div>
+
+
+<!--  {% for post in site.posts %}
+      {{ post.excerpt }}
+      <p>>>><a href="{{ post.url }}">read more</a></p>
+  {% endfor %} -->
+
+
+  </div>
+  {% endfor %}
+</div>
+
