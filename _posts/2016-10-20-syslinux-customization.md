@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Кастомизация меню syslinux
-tags: syslinux, linux
+tags: syslinux linux
 comments: True
 excerpt_separator: <!--more-->
 ---
