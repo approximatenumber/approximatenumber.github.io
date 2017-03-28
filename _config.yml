@@ -29,3 +29,5 @@ author:
   email:             approximatenumber@gmail.com
 
 # Custom vars
+
+theme: jekyll-theme-tactile
