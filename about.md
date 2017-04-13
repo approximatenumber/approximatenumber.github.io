@@ -3,7 +3,9 @@ layout: page
 title: ABOUT
 ---
 
-My name is Maksim Melnikov. And my contacts are:
+name: Maksim Melnikov
+
+contacts:
 
 * [github](https://github.com/approximatenumber)
 * [stackoverflow](http://ru.stackoverflow.com/users/199091/approximatenumber)
