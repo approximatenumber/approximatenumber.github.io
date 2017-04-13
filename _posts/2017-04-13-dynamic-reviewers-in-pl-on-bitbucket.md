@@ -22,7 +22,7 @@ import com.atlassian.bitbucket.auth.AuthenticationContext
 def userService = ComponentLocator.getComponent(UserService)
 def authContext = ComponentLocator.getComponent(AuthenticationContext)
  
-def permitted_groups = ["bitbucket-sw-llvl-managers", "bitbucket-administrators"]
+def permitted_groups = ["bitbucket-sw-managers"]
 def need_approve = true
  
 for (group in permitted_groups) {
@@ -33,5 +33,7 @@ for (group in permitted_groups) {
  
 return need_approve
 ```
+
+_`permitted_groups` является списком, потому что вполне вероятно, что одной группой не обойтись в ближайшем будущем._
 
 Не забыть выставить требуемое число ревьюеров в поле _Minimum number of approvers_, например _1_.
