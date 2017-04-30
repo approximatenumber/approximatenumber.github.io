@@ -1,1 +1,1 @@
-# This is simple blog of mine
+# My little blog
