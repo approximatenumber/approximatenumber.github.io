@@ -13,7 +13,7 @@ Rocket.Chat is a great tool, but it doesn`t permit to hide annoying system messa
 * room topic
 * new roles
 
-To hide them all use some custom CSS styles below (section **Layout**->**Custom CSS** in **Administation** panel)
+To hide them all use some custom CSS hacks below (section **Layout**->**Custom CSS** in **Administation** panel):
 
 <!--more-->
 
