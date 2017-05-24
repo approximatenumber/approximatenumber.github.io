@@ -45,10 +45,12 @@ To hide them all use some custom CSS styles below (section **Layout**->**Custom 
 }
 ```
 
-For example, here is two screenshots before adding CSS:
+For example, here is two screenshots:
+
+before adding CSS
 
 ![before](/images/rocket_before_css.png)
 
-and after:
+and after
 
 ![after](/images/rocket_after_css.png)
