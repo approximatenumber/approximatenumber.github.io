@@ -19,7 +19,7 @@ _Здесь не реализованы все полезные возможно
 Будем разворачивать связку, как на картинке выше.
 Обратите внимание, что я использовал конкретные версии образов, с которыми у меня не возникло ошибок. Будьте внимательны: определенные версии сервисов Atlassian могут не "подружиться" с версией postgres, например.
 
-###Nginx+Letsencrypt
+### Nginx+Letsencrypt
 
 Nginx будет проксировать запросы к сервисам.
 Я пользовался официальным образом: https://hub.docker.com/_/nginx/ (там можно найти более подробное описание)
@@ -144,7 +144,8 @@ docker-compose kill -s SIGHUP nginx
 ```
 Не забыть продумать механизм обновления сертификатов. Я еще не продумал :)
 
-###DB (Postgres)
+### DB (Postgres)
+
 Понадобится база данных, в которой будут храниться данные сервисов Atlassian. 
 Я пользовался официальным образом: https://hub.docker.com/_/postgres/ (там можно найти более подробное описание)
 Создаем том для постоянных данных:
@@ -185,7 +186,8 @@ GRANT ALL PRIVILEGES ON DATABASE bitbucketdb TO bitbucketuser;
 docker-compose create db
 ```
 
-###JIRA
+### JIRA
+
 Пользовался образом `cptactionhank/atlassian-jira-software`.
 Создаем контейнеры для данных:
 ```
@@ -214,7 +216,8 @@ volumes:
 После старта необходимо будет настроить `server.xml` (находится в томе jira-install:conf/) для работы nginx+jira, подробности у Atlassian: https://confluence.atlassian.com/jirakb/integrating-jira-with-nginx-426115340.html
 Если всё сделано правильно, то после старта JIRA будет доступна по `domain.com/jira`.
 
-###Confluence
+### Confluence
+
 Пользовался образом `mminks/docker-oracle-jdk-confluence`, потому как он работает на основое Oracle Java, с которой Atlassian, как сам признается, работает лучше. Образы с OpenJDK не завелись с первого раза. Возможно, конечно, это моя вина.
 
  Создаем контейнеры для данных:
@@ -243,7 +246,8 @@ volumes:
 `server.xml` для работы через nginx также необходимо настроить, подробности у Atlassian: https://confluence.atlassian.com/confeap/running-confluence-behind-nginx-with-ssl-849150880.html
 Если всё сделано правильно, то после старта Confluence будет доступен по `domain.com/confluence`.
 
-###Bitbucket
+### Bitbucket
+
 Использовал образ `cptactionhank/atlassian-bitbucket`.
 Создаем контейнеры для данных:
 ```
@@ -272,7 +276,7 @@ volumes:
 `server.xml` для работы через nginx также необходимо настроить, я воспользовался информацией из этой статьи: http://blog.sukitsuki.com/2016/05/27/Atlassian-Jira-Bitbucket-Nginx%C2%A0reverse-proxy/
 Если всё сделано правильно, то после старта Bitbucket будет доступен по `domain.com/bitbucket`.
 
-###Mail server
+### Mail server
 Мне было необходимо, чтобы пользователям сервисов приходили уведомления на их почтовые ящики, поэтому я сделал почтовый сервер (только SMTP).
 Воспользовался классным образом `tvial/docker-mailserver`, который очень удобен. На странице проекта в гитхабе описаны подробности настройки. Я же включил только SMTP.
 Создаем директории:
@@ -309,5 +313,6 @@ docker run --rm \
 ```
 Без последней опции `PERMIT_DOCKER` контейнеры с Atlassian не могли связаться с почтовым сервером.
 
-##Итог
+## Итог
+
 Полный `docker-compose.yml` доступен в моем репозитории, а также всё, что нужно для того, чтобы выполнить вышеуказанные действия: 
