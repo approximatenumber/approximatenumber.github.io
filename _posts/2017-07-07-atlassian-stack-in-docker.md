@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 ![Atlassian Stack Pic](/images/atlassian_stack.png)
 
-_Atlassian Stack (я решил его так назвать), объединяющий JIRA, Confluence и Bitbucket - одна из полезнейших связок в сфере сервисов для CI/CD и DevOps. В этой заметке я постараюсь описать, как можно быстро и удобно развернуть этот стек с помощью docker на своем сервере. Вы можете воспользоваться моим репозиторием для быстрого старта:_
+_Atlassian Stack (я решил его так назвать), объединяющий JIRA, Confluence и Bitbucket - одна из полезнейших связок в сфере сервисов для CI/CD и DevOps. В этой заметке я постараюсь описать, как можно быстро и удобно развернуть этот стек с помощью docker на своем сервере. Вы можете воспользоваться моим [репозиторием](https://github.com/approximatenumber/atlassian-stack_docker) для быстрого старта:_
 
 _Здесь не реализованы все полезные возможности, например, Crowd, а также почтовый сервер работает только для SMTP. Добавляйте фичи сами. Заметку написал после того, как на работе пришлось разворачивать этот стек на небольшом сервере для определенных нужд компании._
 
@@ -22,7 +22,7 @@ _Здесь не реализованы все полезные возможно
 ### Nginx+Letsencrypt
 
 Nginx будет проксировать запросы к сервисам.
-Я пользовался официальным образом: https://hub.docker.com/_/nginx/ (там можно найти более подробное описание)
+Я пользовался официальным образом: [https://hub.docker.com/_/nginx/] (там можно найти более подробное описание)
 Создаем директорию для конфигурации:
 ```
 mkdir -p nginx/conf.d
@@ -75,7 +75,7 @@ server {
   }
 }
 ```
-**Обратите внимание, мы будем использовать letsencrypt-сертификаты для обеспечения работы HTTPS.** Я пользовался отличной статьей, где описывается получение сертификата с помощью контейнера с letsencrypt и конфигурация nginx для этого: https://devsidestory.com/lets-encrypt-with-docker/
+**Обратите внимание, мы будем использовать letsencrypt-сертификаты для обеспечения работы HTTPS.** Я пользовался отличной статьей, где описывается получение сертификата с помощью контейнера с letsencrypt и конфигурация nginx для этого: [https://devsidestory.com/lets-encrypt-with-docker/]
 Если кратко, то:
 Создаем директории:
 ```
@@ -147,7 +147,7 @@ docker-compose kill -s SIGHUP nginx
 ### DB (Postgres)
 
 Понадобится база данных, в которой будут храниться данные сервисов Atlassian. 
-Я пользовался официальным образом: https://hub.docker.com/_/postgres/ (там можно найти более подробное описание)
+Я пользовался официальным образом: [https://hub.docker.com/_/postgres/] (там можно найти более подробное описание)
 Создаем том для постоянных данных:
 ```
 docker volume create postgres-data
@@ -213,7 +213,7 @@ volumes:
   jira-install:
     external: True
 ```
-После старта необходимо будет настроить `server.xml` (находится в томе jira-install:conf/) для работы nginx+jira, подробности у Atlassian: https://confluence.atlassian.com/jirakb/integrating-jira-with-nginx-426115340.html
+После старта необходимо будет настроить `server.xml` (находится в томе jira-install:conf/) для работы nginx+jira, подробности у Atlassian: [https://confluence.atlassian.com/jirakb/integrating-jira-with-nginx-426115340.html]
 Если всё сделано правильно, то после старта JIRA будет доступна по `domain.com/jira`.
 
 ### Confluence
@@ -243,7 +243,7 @@ volumes:
   confluence-install:
     external: True
 ```
-`server.xml` для работы через nginx также необходимо настроить, подробности у Atlassian: https://confluence.atlassian.com/confeap/running-confluence-behind-nginx-with-ssl-849150880.html
+`server.xml` для работы через nginx также необходимо настроить, подробности у Atlassian: [https://confluence.atlassian.com/confeap/]running-confluence-behind-nginx-with-ssl-849150880.html
 Если всё сделано правильно, то после старта Confluence будет доступен по `domain.com/confluence`.
 
 ### Bitbucket
@@ -273,7 +273,7 @@ volumes:
   bitbucket-install:
     external: True
 ```
-`server.xml` для работы через nginx также необходимо настроить, я воспользовался информацией из этой статьи: http://blog.sukitsuki.com/2016/05/27/Atlassian-Jira-Bitbucket-Nginx%C2%A0reverse-proxy/
+`server.xml` для работы через nginx также необходимо настроить, я воспользовался информацией из этой статьи: [http://blog.sukitsuki.com/2016/05/27/Atlassian-Jira-Bitbucket-Nginx%C2%A0reverse-proxy/]
 Если всё сделано правильно, то после старта Bitbucket будет доступен по `domain.com/bitbucket`.
 
 ### Mail server
@@ -291,7 +291,7 @@ docker run --rm \
     -ti tvial/docker-mailserver:latest \
     /bin/sh -c 'echo "$MAIL_USER|$(doveadm pw -s SHA512-CRYPT -u $MAIL_USER -p $MAIL_PASS)"' >> config/postfix-accounts.cf
 ```
-Секция `docker-compose.yml` для bitbucketsmtp-сервера **с полученными ранее сертификатами letsencrypt** может выглядеть так:
+Секция `docker-compose.yml` для smtp-сервера **с полученными ранее сертификатами letsencrypt** может выглядеть так:
 ```
   mail:
     image: tvial/docker-mailserver:latest
@@ -315,4 +315,4 @@ docker run --rm \
 
 ## Итог
 
-Полный `docker-compose.yml` доступен в моем репозитории, а также всё, что нужно для того, чтобы выполнить вышеуказанные действия: 
+Полный `docker-compose.yml` доступен в моем [репозитории](https://github.com/approximatenumber/atlassian-stack_docker), а также всё, что нужно для того, чтобы выполнить вышеуказанные действия.
