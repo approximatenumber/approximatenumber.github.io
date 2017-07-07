@@ -22,7 +22,7 @@ _Здесь не реализованы все полезные возможно
 ### Nginx+Letsencrypt
 
 Nginx будет проксировать запросы к сервисам.
-Я пользовался официальным образом: [https://hub.docker.com/_/nginx/] (там можно найти более подробное описание)
+Я пользовался официальным образом: <https://hub.docker.com/_/nginx/> (там можно найти более подробное описание)
 Создаем директорию для конфигурации:
 ```
 mkdir -p nginx/conf.d
@@ -147,7 +147,7 @@ docker-compose kill -s SIGHUP nginx
 ### DB (Postgres)
 
 Понадобится база данных, в которой будут храниться данные сервисов Atlassian. 
-Я пользовался официальным образом: [https://hub.docker.com/_/postgres/] (там можно найти более подробное описание)
+Я пользовался официальным образом: <https://hub.docker.com/_/postgres/> (там можно найти более подробное описание)
 Создаем том для постоянных данных:
 ```
 docker volume create postgres-data
@@ -213,7 +213,7 @@ volumes:
   jira-install:
     external: True
 ```
-После старта необходимо будет настроить `server.xml` (находится в томе jira-install:conf/) для работы nginx+jira, подробности у Atlassian: [https://confluence.atlassian.com/jirakb/integrating-jira-with-nginx-426115340.html]
+После старта необходимо будет настроить `server.xml` (находится в томе jira-install:conf/) для работы nginx+jira, подробности у Atlassian: <https://confluence.atlassian.com/jirakb/integrating-jira-with-nginx-426115340.html>
 Если всё сделано правильно, то после старта JIRA будет доступна по `domain.com/jira`.
 
 ### Confluence
@@ -243,7 +243,7 @@ volumes:
   confluence-install:
     external: True
 ```
-`server.xml` для работы через nginx также необходимо настроить, подробности у Atlassian: [https://confluence.atlassian.com/confeap/]running-confluence-behind-nginx-with-ssl-849150880.html
+`server.xml` для работы через nginx также необходимо настроить, подробности у Atlassian: <https://confluence.atlassian.com/confeap/>running-confluence-behind-nginx-with-ssl-849150880.html
 Если всё сделано правильно, то после старта Confluence будет доступен по `domain.com/confluence`.
 
 ### Bitbucket
@@ -273,7 +273,7 @@ volumes:
   bitbucket-install:
     external: True
 ```
-`server.xml` для работы через nginx также необходимо настроить, я воспользовался информацией из этой статьи: [http://blog.sukitsuki.com/2016/05/27/Atlassian-Jira-Bitbucket-Nginx%C2%A0reverse-proxy/]
+`server.xml` для работы через nginx также необходимо настроить, я воспользовался информацией из этой статьи: <http://blog.sukitsuki.com/2016/05/27/Atlassian-Jira-Bitbucket-Nginx%C2%A0reverse-proxy/>
 Если всё сделано правильно, то после старта Bitbucket будет доступен по `domain.com/bitbucket`.
 
 ### Mail server
