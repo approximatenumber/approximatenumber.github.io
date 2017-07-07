@@ -17,12 +17,15 @@ _Здесь не реализованы все полезные возможно
 Сначала, естественно, установите `docker`. А также `docker-compose` (я использую именно его для быстрого старта и управления сервисами).
 
 Будем разворачивать связку, как на картинке выше.
+
 Обратите внимание, что я использовал конкретные версии образов, с которыми у меня не возникло ошибок. Будьте внимательны: определенные версии сервисов Atlassian могут не "подружиться" с версией postgres, например.
 
 ### Nginx+Letsencrypt
 
 Nginx будет проксировать запросы к сервисам.
+
 Я пользовался официальным образом: <https://hub.docker.com/_/nginx/> (там можно найти более подробное описание)
+
 Создаем директорию для конфигурации:
 ```
 mkdir -p nginx/conf.d
@@ -76,12 +79,14 @@ server {
 }
 ```
 **Обратите внимание, мы будем использовать letsencrypt-сертификаты для обеспечения работы HTTPS.** Я пользовался отличной статьей, где описывается получение сертификата с помощью контейнера с letsencrypt и конфигурация nginx для этого: <https://devsidestory.com/lets-encrypt-with-docker/>
+
 Если кратко, то:
-Создаем директории:
+
+создаем директории:
 ```
 mkdir letsencrypt
 ```
-Создаем там `Dockerfile`:
+создаем там `Dockerfile`:
 ```
 FROM debian:jessie-backports
  
@@ -126,19 +131,19 @@ volumes:
   letsencrypt_certs: ~
   letsencrypt_www: ~
 ```
-Собираем letsencrypt и запускаем вместе с nginx
+собираем letsencrypt и запускаем вместе с nginx
 ```
 docker-compose build letsencrypt
 docker-compose up -d nginx letsencrypt
 ```
-Получаем SSL-сертификат
+получаем SSL-сертификат
 ```
 docker-compose run --rm letsencrypt \
   letsencrypt certonly --webroot \
   --email me@domain.com --agree-tos \
   -w /var/www/letsencrypt -d domain.com
 ```
-Теперь можно перезапустить nginx уже с полученным сертификатом!
+теперь можно перезапустить nginx уже с полученным сертификатом!
 ```
 docker-compose kill -s SIGHUP nginx
 ```
@@ -147,7 +152,9 @@ docker-compose kill -s SIGHUP nginx
 ### DB (Postgres)
 
 Понадобится база данных, в которой будут храниться данные сервисов Atlassian. 
+
 Я пользовался официальным образом: <https://hub.docker.com/_/postgres/> (там можно найти более подробное описание)
+
 Создаем том для постоянных данных:
 ```
 docker volume create postgres-data
@@ -214,6 +221,7 @@ volumes:
     external: True
 ```
 После старта необходимо будет настроить `server.xml` (находится в томе jira-install:conf/) для работы nginx+jira, подробности у Atlassian: <https://confluence.atlassian.com/jirakb/integrating-jira-with-nginx-426115340.html>
+
 Если всё сделано правильно, то после старта JIRA будет доступна по `domain.com/jira`.
 
 ### Confluence
@@ -249,6 +257,7 @@ volumes:
 ### Bitbucket
 
 Использовал образ `cptactionhank/atlassian-bitbucket`.
+
 Создаем контейнеры для данных:
 ```
 docker volume create bitbucket-home
@@ -274,11 +283,13 @@ volumes:
     external: True
 ```
 `server.xml` для работы через nginx также необходимо настроить, я воспользовался информацией из этой статьи: <http://blog.sukitsuki.com/2016/05/27/Atlassian-Jira-Bitbucket-Nginx%C2%A0reverse-proxy/>
+
 Если всё сделано правильно, то после старта Bitbucket будет доступен по `domain.com/bitbucket`.
 
 ### Mail server
 Мне было необходимо, чтобы пользователям сервисов приходили уведомления на их почтовые ящики, поэтому я сделал почтовый сервер (только SMTP).
 Воспользовался классным образом `tvial/docker-mailserver`, который очень удобен. На странице проекта в гитхабе описаны подробности настройки. Я же включил только SMTP.
+
 Создаем директории:
 ```
 mkdir -p mail/config
