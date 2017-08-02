@@ -6,6 +6,8 @@ comments: True
 excerpt_separator: <!--more-->
 ---
 
+![Question](/images/update_ask.png)
+
 Do you ever notice that Jenkins plugins versions are being updatedso fast? It\`s either good or bad: good, because we`ve got new features and bugfixes so often; bad, because we often need to update them manually. :)
 
 But we can automate plugins update procedure with Jenkins cool pipeline! I write an example `Jenkinsfile` using magic of `shell` and `groovy`:
