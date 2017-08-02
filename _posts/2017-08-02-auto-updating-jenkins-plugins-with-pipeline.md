@@ -12,6 +12,8 @@ Do you ever notice that Jenkins plugins versions are being updatedso fast? It\`s
 
 But we can automate plugins update procedure with Jenkins cool pipeline! I write an example `Jenkinsfile` using magic of `shell` and `groovy`:
 
+<!--more-->
+
 ```groovy
 #!/usr/bin/env groovy
 
