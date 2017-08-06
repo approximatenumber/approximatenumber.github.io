@@ -20,6 +20,9 @@ But we can automate plugins update procedure with Jenkins cool pipeline! I write
 def jenkins_cli = "/var/jenkins_home/war/WEB-INF/jenkins-cli.jar"
 def jenkins_url = "http://127.0.0.1:8080/"
 def admin_email = "admin@example.com"
+def user_name = ""
+// you can get your token in ${JENKINS_URL}/me/configure
+def user_token = ""
 
 node {
     properties(
@@ -37,7 +40,7 @@ node {
             updates = sh(returnStdout: true,
                              script: "java -jar ${jenkins_cli} -s ${jenkins_url} list-plugins | \
                                       grep -e ')\$' | \
-                                      awk '{ print \$1 }'").trim()
+                                      awk '{ print \$1 }'").replaceAll("[\n\r]", " ")
         }
         if (updates) {
             
@@ -56,10 +59,10 @@ node {
             
             stage('Do Update') {
                 echo "===\nPlugins to update:\n${updates}\n==="
-                sh "java -jar ${jenkins_cli} -s ${jenkins_url} install-plugin ${updates}"
+                sh "java -jar ${jenkins_cli} -s ${jenkins_url} -auth ${user_name}:${user_token} install-plugin ${updates}"
             }
             stage('Safe Restart') {
-                sh "java -jar ${jenkins_cli} -s ${jenkins_url} safe-restart"
+                sh "java -jar ${jenkins_cli} -s ${jenkins_url} -auth ${user_name}:${user_token} safe-restart"
             }
         }
         else {
@@ -70,6 +73,7 @@ node {
         throw err
     }
 }
+
 ```
 
 As a result, this job will be started `@weekly`, check available updates, send an email to you to confirm update. If you don\`t confirm it in 24 hours, job will update plugins automatically.
