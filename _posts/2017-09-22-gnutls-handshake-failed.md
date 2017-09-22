@@ -1,6 +1,6 @@
 ---
 layout: post
-title: gnutls_handshake() failed: An unexpected TLS packet was received
+title: gnutls_handshake() failed. An unexpected TLS packet was received
 tags: linux git jenkins bug
 comments: True
 excerpt_separator: <!--more-->
