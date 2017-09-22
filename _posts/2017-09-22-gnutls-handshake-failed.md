@@ -40,7 +40,7 @@ How to fix it?
 
 <!--more-->
 
-After some googling of this problem I found working solution: you need to rebuild `git` with ` libcurl4-openssl-dev` lib instead of `libcurl4-gnutls-dev` by default. Some users tell about some problems with `gnutls` when it is located in **deep** proxy (these strange words is connected with the fact, that our Jenkins is running in docker.) while `openssl` doesn`t have such problems.
+After some googling of this problem I found working solution: you need to rebuild `git` with `libcurl4-openssl-dev` lib instead of `libcurl4-gnutls-dev` by default. Some users tell about some problems with `gnutls` when it is located in **deep** proxy (these strange words is connected with the fact, that our Jenkins is running in docker.) while `openssl` doesn\`t have such problems.
 
 Jenkins is running in docker under `debian:jessie-backports` and `git` package version is `2.11`, so this solution is acceptable for this configuration.
 
