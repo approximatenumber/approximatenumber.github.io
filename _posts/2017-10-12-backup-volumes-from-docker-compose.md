@@ -1,10 +1,12 @@
 ---
 layout: post
-title: :rocket: Backup your volumes from docker-compose.yml
+title: Backup your volumes from docker-compose.yml
 tags: docker devops
 comments: True
 excerpt_separator: <!--more-->
 ---
+
+:electric_plug: 
 
 `docker-compose` is a great thing to deploy your services. It\`s a new tool for, so maybe I am wrong, but I cannot find any usable solution to backup volumes from my services... Of course, I can do it manually, but it sucks :)
 
