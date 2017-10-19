@@ -19,10 +19,8 @@ But we can automate plugins update procedure with Jenkins cool pipeline! I write
 
 def jenkins_cli = "/var/jenkins_home/war/WEB-INF/jenkins-cli.jar"
 def jenkins_url = "http://127.0.0.1:8080/"
-def admin_email = "admin@example.com"
-def user_name = ""
-// you can get your token in ${JENKINS_URL}/me/configure
-def user_token = ""
+def admin_email = "admin@domain.com"
+def credentials = "--username \"someuser\" --password \"somepassword\""
 
 node {
     properties(
@@ -31,7 +29,7 @@ node {
             $class: 'BuildDiscarderProperty',
             strategy: [$class: 'LogRotator', numToKeepStr: '5']
         ],
-        pipelineTriggers([cron('@weekly')]),
+        pipelineTriggers([cron('@monthly')]),
     ]
     )
 
@@ -40,12 +38,13 @@ node {
             updates = sh(returnStdout: true,
                              script: "java -jar ${jenkins_cli} -s ${jenkins_url} list-plugins | \
                                       grep -e ')\$' | \
-                                      awk '{ print \$1 }'").replaceAll("[\n\r]", " ")
+                                      awk '{ print \$1 }'").trim()
         }
         if (updates) {
             
             stage('Ask') {
-                body = "Please  <a href='${env.BUILD_URL}/input'>decide</a> what to do.<br> \
+                body = "Plugins to update:<b>${updates}</b><br> \
+                        Please  <a href='${env.BUILD_URL}/input'>decide</a> what to do.<br> \
                         You better <a href='${env.JENKINS_URL}/pluginManager'>look</a> at plugins</a> before updating.<br> \
                         Will automatically proceed in 24 hours!"
                 emailext body: body,
@@ -53,16 +52,19 @@ node {
                          subject: 'Jenkins wants to update plugins',
                          to: admin_email
                 timeout(time: 24, unit: 'HOURS') {
-                    input message: 'Proceed to install updates?'
+                    input message: "===Updates===\n"+
+                                   "${updates}"+
+                                   "\n======\n"+
+                                   "Proceed to install updates?"
                 }
             }
             
             stage('Do Update') {
-                echo "===\nPlugins to update:\n${updates}\n==="
-                sh "java -jar ${jenkins_cli} -s ${jenkins_url} -auth ${user_name}:${user_token} install-plugin ${updates}"
+                updates = updates.replace("\n", " ")
+                sh "java -jar ${jenkins_cli} -s ${jenkins_url} install-plugin ${updates} ${credentials}"
             }
             stage('Safe Restart') {
-                sh "java -jar ${jenkins_cli} -s ${jenkins_url} -auth ${user_name}:${user_token} safe-restart"
+                sh "java -jar ${jenkins_cli} -s ${jenkins_url} safe-restart ${credentials}"
             }
         }
         else {
@@ -73,8 +75,7 @@ node {
         throw err
     }
 }
-
 ```
 
-As a result, this job will be started `@weekly`, check available updates, send an email to you to confirm update. If you don\`t confirm it in 24 hours, job will update plugins automatically.
+As a result, this job will be started `@monthly`, check available updates, send an email to you to confirm update. If you don\`t confirm it in 24 hours, job will update plugins automatically.
 
