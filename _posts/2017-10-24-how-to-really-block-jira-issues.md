@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 ![image](images/blocked_issue.png)
 
-We thought that linking JIRA issue as blocking another one is really blocking from closing this another one. It`s obviously that *blocked* task cannot be resolved before *blocking* task is resolved, yep? But by default there is no functionality in JIRA to process blocking issues. Link statuses like `is blocked by` or `blocks` are just usual issue field value.
+We thought that linking JIRA issue as blocking another one is really blocking from closing this another one. It\`s obviously that *blocked* task cannot be resolved before *blocking* task is resolved, yep? But by default there is no functionality in JIRA to process blocking issues. Link statuses like `is blocked by` or `blocks` are just usual issue field value.
 
 I can help you to solve this problem. It could be easy done with **ScriptRunner for JIRA**.
 
