@@ -1,9 +1,12 @@
 ---
-layout: post
 title: Кастомизация меню syslinux
-tags: syslinux linux
-comments: True
-excerpt_separator: <!--more-->
+date: 2016-10-20 00:00:00 Z
+tags:
+- syslinux
+- linux
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 Можно сделать так, чтобы меню `syslinux`\`а выглядело так, как вам хочется.

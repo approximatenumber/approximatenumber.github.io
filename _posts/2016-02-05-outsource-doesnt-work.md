@@ -1,9 +1,13 @@
 ---
-layout: post
 title: Почему аутсорсинг больше... не работает
-tags: bugaenko translation dev
-comments: True
-excerpt_separator: <!--more-->
+date: 2016-02-05 00:00:00 Z
+tags:
+- bugaenko
+- translation
+- dev
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 <small>*Перевод статьи Е. Бугаенко [«Why Software Outsourcing Doesn't Work ... Anymore»](http://www.yegor256.com/2015/10/27/outsourcing-doesnt-work.html).*</small>

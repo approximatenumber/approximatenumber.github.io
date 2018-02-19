@@ -1,9 +1,14 @@
 ---
-layout: post
 title: Кастомизация reviewers в Pull-Request`ах на Bitbucket
-tags: bitbucket cicd devops scriptrunner
-comments: True
-excerpt_separator: <!--more-->
+date: 2017-04-13 00:00:00 Z
+tags:
+- bitbucket
+- cicd
+- devops
+- scriptrunner
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 _Нам понадобилась возможность делать merge пулл-реквеста для определенной группы пользователей без необходимости одобрения со стороны approvers. Т.е. главные разработчики могут позволить себе делать merge без code-review. Как оказалось, таких возможностей в Bitbucket нет. В случае задания в настройках репозитория опции "Requires N approvers" невозможно выполнить merge, какими бы полномочиями пользователь не обладал, Bitbucket требует одобрения! Конфигурация Branch Permissions также не может данную проблему. Выручить может ScriptRunner._

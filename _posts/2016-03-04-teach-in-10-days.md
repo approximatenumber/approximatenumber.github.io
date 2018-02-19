@@ -1,9 +1,12 @@
 ---
-layout: post
 title: Научитесь программировать за десять лет
-tags: copypaste dev
-comments: True
-excerpt_separator: <!--more-->
+date: 2016-03-04 00:00:00 Z
+tags:
+- copypaste
+- dev
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 <small>*Копипаста [переведенной](http://www.williamspublishing.com/21-days.html) [статьи](http://norvig.com/21-days.html) Питера Норвига (автор книги [«Искусственный интеллект: современный подход»](http://www.williamspublishing.com/Books/5-8459-0887-6.html) AIMA, 2-е издание)*</small>

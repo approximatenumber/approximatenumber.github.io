@@ -1,9 +1,14 @@
 ---
-layout: post
 title: PXE-сервер на CentOS для сетевой загрузки за 5 минут
-tags: linux centos pxe syslinux
-comments: True
-excerpt_separator: <!--more-->
+date: 2016-11-10 00:00:00 Z
+tags:
+- linux
+- centos
+- pxe
+- syslinux
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 PXE-сервер - это полезная и удобная вещь во многих случаях:

@@ -1,9 +1,13 @@
 ---
-layout: post
 title: Загрузочная флешка с QNX4 и syslinux
-tags: linux qnx usb
-comments: True
-excerpt_separator: <!--more-->
+date: 2016-05-05 00:00:00 Z
+tags:
+- linux
+- qnx
+- usb
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 Инструкция, как сделать загрузочную флешку с ОС QNX4, загружаемой с помощью `syslinux` -> `memdisk`.

@@ -1,9 +1,14 @@
 ---
-layout: post
 title: Jenkins+Bitbucket Pull Request CI
-tags: jenkins bitbucket cicd devops
-comments: True
-excerpt_separator: <!--more-->
+date: 2017-03-27 00:00:00 Z
+tags:
+- jenkins
+- bitbucket
+- cicd
+- devops
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 **Данная заметка касается реализации варианта CI для fast-forward merging.**

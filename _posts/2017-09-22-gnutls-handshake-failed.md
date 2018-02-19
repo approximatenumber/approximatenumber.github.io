@@ -1,9 +1,14 @@
 ---
-layout: post
 title: gnutls_handshake() failed. An unexpected TLS packet was received
-tags: linux git jenkins bug
-comments: True
-excerpt_separator: <!--more-->
+date: 2017-09-22 00:00:00 Z
+tags:
+- linux
+- git
+- jenkins
+- bug
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 One day I got this error in our job on Jenkins server:

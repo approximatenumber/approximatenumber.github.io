@@ -1,9 +1,13 @@
 ---
-layout: post
 title: Семь смертных грехов проекта
-tags: bugaenko translation dev
-comments: True
-excerpt_separator: <!--more-->
+date: 2016-02-07 00:00:00 Z
+tags:
+- bugaenko
+- translation
+- dev
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 <small>*Перевод статьи Е. Бугаенко [«Seven Deadly Sins of a Software Project»](http://www.yegor256.com/2015/06/08/deadly-sins-software-project.html).*</small>

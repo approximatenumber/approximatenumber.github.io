@@ -1,9 +1,12 @@
 ---
-layout: post
 title: Как сделать бинарный RPM-пакет из готового набора файлов
-tags: linux rpm
-comments: True
-excerpt_separator: <!--more-->
+date: 2016-06-27 00:00:00 Z
+tags:
+- linux
+- rpm
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 Для примера мы возьмем файл (в данном случае пустой sh-скрипт) `testapp.sh`, который находится в каталоге `/opt/testapp`. Представим, что это программа, состоящая всего лишь из одного файла, и ее необходимо распространять в виде RPM-пакета.
