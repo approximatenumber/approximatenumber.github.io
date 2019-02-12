@@ -61,7 +61,7 @@ instagram_access_token: ACCESS_TOKEN
 6. And finally add this include file on the page you want to show an instagram feed (example: `_pages/about.html`):
 
 ```html
-{% include instagram.html %}
+\{% include instagram.html %\}
 ```
 
 That`s all.
