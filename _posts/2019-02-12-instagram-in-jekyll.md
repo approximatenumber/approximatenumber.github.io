@@ -1,9 +1,12 @@
 ---
-layout: post
 title: How To Add Instagram Feed To Your Jekyll Site
-tags: instagram jekyll
-comments: True
-excerpt_separator: <!--more-->
+date: 2019-02-12 00:00:00 Z
+tags:
+- instagram
+- jekyll
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 *Small tutorial for you who want to show your nice pics from instagram on your small Jekyll site :)*
