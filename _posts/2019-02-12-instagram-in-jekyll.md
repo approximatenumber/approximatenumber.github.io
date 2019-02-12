@@ -11,6 +11,7 @@ excerpt_separator: "<!--more-->"
 
 *Small tutorial for you who want to show your nice pics from instagram on your small Jekyll site :)*
 
+<!--more-->
 1. Register your app in [Instagram Dev](https://www.instagram.com/developer).
 
 You will get `Client ID` and `Client Secret` there. Don`t forget to add Redirect URI (you can use just http://example.com as a redirect URI, because we need it only to get the special code).
@@ -60,8 +61,8 @@ instagram_access_token: ACCESS_TOKEN
 
 6. And finally add this include file on the page you want to show an instagram feed (example: `_pages/about.html`):
 
-```html
-\{% include instagram.html %\}
+```
+\{\% include instagram.html \%\}
 ```
 
 That`s all.
