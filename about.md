@@ -1,6 +1,6 @@
 ---
-layout: page
 title: ABOUT
+layout: page
 ---
 
 name: Maksim Melnikov

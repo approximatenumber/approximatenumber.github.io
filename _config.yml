@@ -1,33 +1,22 @@
-# Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
-# permalink:           pretty
-# relative_permalinks: true
-permalink: /blog/:title
-
-# Setup
-title:               ≈ Approximate Number
-tagline:             I`m writing useless blog
-description:         some notes to remember ☺
-# url:                 approximatenumber.github.io
-paginate:            5
-baseurl:             ""
-
-gems: [jekyll-paginate]
-excerpt_separator:   "<!-- more -->"
-
-# Assets
-#
-# We specify the directory for Jekyll so we can use @imports.
-#sass:
-#  sass_dir:          _sass
-#  style:            :compressed
-
-# About/contact
+---
+title: "≈ Approximate Number"
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+permalink: "/blog/:title"
+tagline: I`m writing useless blog
+description: some notes to remember ☺
+paginate: 5
+baseurl: ''
+gems:
+- jekyll-paginate
+excerpt_separator: "<!-- more -->"
 author:
-  name:              Maksim Melnikov
-  email:             approximatenumber@gmail.com
-
-# Custom vars
-
+  name: Maksim Melnikov
+  email: approximatenumber@gmail.com
 theme: jekyll-theme-tactile

@@ -1,9 +1,12 @@
 ---
-layout: post
 title: How to hide system messages in Rocket.Chat
-tags: rocketchat css
-comments: True
-excerpt_separator: <!--more-->
+date: 2017-05-23 00:00:00 Z
+tags:
+- rocketchat
+- css
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 Rocket.Chat is a great tool, but it doesn`t permit to hide annoying system messages in channels about:

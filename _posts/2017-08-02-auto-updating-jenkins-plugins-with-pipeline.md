@@ -1,9 +1,12 @@
 ---
-layout: post
 title: Updating Jenkins Plugins With Pipeline
-tags: jenkins automation
-comments: True
-excerpt_separator: <!--more-->
+date: 2017-08-02 00:00:00 Z
+tags:
+- jenkins
+- automation
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 ![Question](/images/update_ask.png)

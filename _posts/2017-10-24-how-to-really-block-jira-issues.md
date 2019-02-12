@@ -1,9 +1,12 @@
 ---
-layout: post
 title: JIRA`s blocking does not really block issues
-tags: jira script-runner
-comments: True
-excerpt_separator: <!--more-->
+date: 2017-10-24 00:00:00 Z
+tags:
+- jira
+- script-runner
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 ![image](/images/blocked_issue.png)

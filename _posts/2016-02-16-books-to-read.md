@@ -1,9 +1,11 @@
 ---
-layout: post
 title: Books To Read
-tags: books
-comments: False
-excerpt_separator: <!--more-->
+date: 2016-02-16 00:00:00 Z
+tags:
+- books
+layout: post
+comments: false
+excerpt_separator: "<!--more-->"
 ---
 
 1. **«The Clean Coder: A Code of Conduct for Professional Programmers»**. Robert C. Martin. 

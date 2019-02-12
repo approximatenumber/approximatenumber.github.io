@@ -1,9 +1,15 @@
 ---
-layout: post
 title: Быстрый запуск Atlassian Stack (JIRA+Bitbucket+Confluence) в контейнерах
-tags: atlassian jira bitbucket confluence docker
-comments: True
-excerpt_separator: <!--more-->
+date: 2017-07-07 00:00:00 Z
+tags:
+- atlassian
+- jira
+- bitbucket
+- confluence
+- docker
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 ![Atlassian Stack Pic](/images/atlassian_stack.png)

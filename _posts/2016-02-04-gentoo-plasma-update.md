@@ -1,9 +1,14 @@
 ---
-layout: post
 title: Обновление KDE до Plasma в Gentoo
-tags: linux gentoo plasma kde
-comments: True
-excerpt_separator: <!--more-->
+date: 2016-02-04 00:00:00 Z
+tags:
+- linux
+- gentoo
+- plasma
+- kde
+layout: post
+comments: true
+excerpt_separator: "<!--more-->"
 ---
 
 При попытке обновления KDE в Gentoo до Plasma могут возникнуть некоторые... проблемы. Опишу некоторые моменты в ходе установки на своей системе.
